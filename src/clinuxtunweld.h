@@ -13,8 +13,11 @@ class cLinuxTunWeld : public iTun {
     private:
         linuxTun<> m_linux_tun;
         std::vector<unsigned char> m_weld;
-        size_t m_readed_bytes_in_weld = 0;
-        const unsigned char * m_current_data_read_ready_ptr = nullptr;
+        size_t m_read_ready_bytes_in_weld = 0;
+        unsigned char * m_current_data_read_ready_ptr = nullptr;
+        uint32_t m_mtu = 0;
+
+        void clear_weld();
 };
 
 #endif // CLINYXTUNWELD_H

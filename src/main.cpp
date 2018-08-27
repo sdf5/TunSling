@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
 			("UDP", po::value<std::string>()->required(), "UDP type (Asio, Sendmmsg) (required)")
 			("crypto", po::value<std::string>()->required(), "Crypto type (Secretbox, X_salsa_20, Empty) (required)")
 			("tun", po::value<std::string>()->required(), "Tun type (LinuxNormal, LinuxWeld) (required)")
+			("tunMtu", po::value<int>()->required(), "MTU size to set on our Tun (typial 9000, 8972, 1500, 1472) (required)")
 		;
 		
 		po::variables_map vm;
